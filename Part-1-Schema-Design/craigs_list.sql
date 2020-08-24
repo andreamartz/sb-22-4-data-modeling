@@ -46,13 +46,6 @@ CREATE TABLE IF NOT EXISTS locations
     name VARCHAR(25) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS posts_categories
-(
-    id SERIAL PRIMARY KEY,
-    category_id INTEGER NOT NULL UNIQUE,
-    post_id INTEGER NOT NULL UNIQUE
-);
-
 
 -- Create FKs
 ALTER TABLE posts
@@ -74,15 +67,10 @@ ALTER TABLE posts
     ADD    FOREIGN KEY (location_id)
     REFERENCES locations(id)
 ;
-    
-ALTER TABLE posts_categories
+
+ALTER TABLE posts
     ADD    FOREIGN KEY (category_id)
     REFERENCES categories(id)
-;
-    
-ALTER TABLE posts_categories
-    ADD    FOREIGN KEY (post_id)
-    REFERENCES posts(id)
 ;
     
 -- Create Indexes
