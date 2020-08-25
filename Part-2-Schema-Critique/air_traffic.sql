@@ -1,11 +1,11 @@
 -- from the terminal run:
 -- psql < air_traffic.sql
 
-DROP DATABASE IF EXISTS air_traffic;
+DROP DATABASE IF EXISTS air_traffic_db;
 
-CREATE DATABASE air_traffic;
+CREATE DATABASE air_traffic_db;
 
-\c air_traffic
+\c air_traffic_db
 
 CREATE TABLE IF NOT EXISTS passengers
 (
@@ -28,11 +28,11 @@ CREATE TABLE IF NOT EXISTS flights
   from_country TEXT NOT NULL,
   to_city TEXT NOT NULL,
   to_country TEXT NOT NULL,
-  departure_time TIMESTAMPTZ,
-  arrival_time TIMESTAMPTZ
+  departure_time TIMESTAMP,
+  arrival_time TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS seat_assignments
+CREATE TABLE IF NOT EXISTS tickets
 (
   id SERIAL PRIMARY KEY,
   passenger_id INTEGER REFERENCES passengers ON DELETE SET NULL,
