@@ -99,15 +99,51 @@ VALUES
 
 
 INSERT INTO songs
-  (title, duration_in_seconds, release_date, album_id, producer_id, band_id)
+  (title, duration_in_seconds, release_date, album_id)
 VALUES
-  ('MMMBop', 238, '1997-04-15', 1, ),
-  ('Bohemian Rhapsody', 355, '1975-10-31', 2, ),
-  ('One Sweet Day', 282, '1995-11-14', 3, ),
-  ('Shallow', 216, '2018-09-27', 4, ),
-  ('How You Remind Me', 223, '2001-08-21', 5, ),
-  ('New York State of Mind', 276, '2009-10-20', 6, ),
-  ('Dark Horse', 215, '2013-12-17', 7, ),
-  ('Moves Like Jagger', 201, '2011-06-21', 8, ),
-  ('Complicated', 244, '2002-05-14', 9, ),
-  ('Say My Name', 240, '1999-11-07', 10, );
+  ('MMMBop', 238, '1997-04-15', 1),
+  ('Bohemian Rhapsody', 355, '1975-10-31', 2),
+  ('One Sweet Day', 282, '1995-11-14', 3),
+  ('Shallow', 216, '2018-09-27', 4),
+  ('How You Remind Me', 223, '2001-08-21', 5),
+  ('New York State of Mind', 276, '2009-10-20', 6),
+  ('Dark Horse', 215, '2013-12-17', 7),
+  ('Moves Like Jagger', 201, '2011-06-21', 8),
+  ('Complicated', 244, '2002-05-14', 9),
+  ('Say My Name', 240, '1999-11-07', 10);
+
+INSERT INTO songs_artists
+  (song_id, artist_id)
+VALUES
+  (1, 1),
+  (2, 2),
+  (3, 3),
+  (3, 4),
+  (4, 5),
+  (4, 6),
+  (5, 7),
+  (6, 8),
+  (6, 9),
+  (7, 10),
+  (7, 11),
+  (8, 12),
+  (8, 13),
+  (9, 14),
+  (10, 15);
+
+INSERT INTO songs_producers
+  (song_id, producer_id)
+VALUES
+  (1, 1),
+  (1, 2),
+  (2, 3),
+  (3, 4),
+  (4, 5),
+  (5, 6),
+  (6, 7),
+  (7, 8),
+  (7, 9),
+  (8, 10),
+  (8, 11),
+  (9, 12),
+  (10, 13);
