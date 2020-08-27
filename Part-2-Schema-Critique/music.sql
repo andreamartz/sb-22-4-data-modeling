@@ -31,9 +31,19 @@ CREATE TABLE songs
   title TEXT NOT NULL,
   duration_in_seconds INTEGER,
   release_date DATE NOT NULL,
-  album_id INTEGER NOT NULL REFERENCES albums ON DELETE CASCADE,
-  producer_id INTEGER NOT NULL REFERENCES producers ON DELETE CASCADE,
-  artist_id INTEGER REFERENCES artists ON DELETE SET NULL
+  album_id INTEGER NOT NULL REFERENCES albums ON DELETE CASCADE
+);
+
+CREATE TABLE songs_artists
+(
+  song_id INTEGER REFERENCES songs,
+  artist_id INTEGER REFERENCES artists
+);
+
+CREATE TABLE songs_producers
+(
+  song_id INTEGER REFERENCES songs,
+  producer_id INTEGER REFERENCES producers
 );
 
 INSERT INTO artists
